@@ -1,7 +1,7 @@
 from config import *
 import pandas as pd 
 from io import StringIO
-from fetch_data import fetch_complaints
+from fetch_utils import fetch_complaints
 from sqlalchemy import create_engine
 
 ''' 
