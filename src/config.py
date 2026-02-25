@@ -15,6 +15,7 @@ DATABASE_URL = os.getenv("DATABASE_URL")
 
 WEATHER_URL = "https://www.ncei.noaa.gov/cdo-web/api/v2/data"
 
+NTA_URL = "https://data.cityofnewyork.us/resource/9nt8-h7nd.csv"
 
 # Tokens 
 API_TOKEN = os.getenv("NYC_311_TOKEN")
