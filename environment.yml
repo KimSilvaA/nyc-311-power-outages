@@ -1,0 +1,14 @@
+name: nyc-311-power-outages
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - pip
+  - numpy
+  - pandas
+  - geopandas
+  - pyproj
+  - shapely
+  - pyogrio
+  - pip:
+      - -r requirements.txt
