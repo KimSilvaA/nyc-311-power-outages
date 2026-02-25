@@ -1,10 +1,13 @@
 import pandas as pd 
 import sqlalchemy as sa 
 import numpy as np
+from pathlib import Path
+
 
 def db_to_df():
     # Create and connect to engine 
-    engine = sa.create_engine("sqlite:///../power_outages.db")
+    # engine = sa.create_engine(f"sqlite:///{DB_PATH}")
+    engine = sa.create_engine("sqlite:////app/power_outages.db")
     connection = engine.connect()
 
     # Create Resolve Time column 
@@ -40,4 +43,4 @@ def load_dataframes():
     raw_df = db_to_df()
     return prepare_df(raw_df)
     
-
+df = load_dataframes()

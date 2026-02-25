@@ -2,11 +2,17 @@ import pandas as pd
 import geopandas as gpd
 import json
 import plotly.express as px 
+from pathlib import Path 
+
+ROOT = Path(__file__).resolve().parents[2]  # repo root, given src/analysis/...
+csv_path = ROOT / "src" / "2020_Neighborhoods_Tabulation_Areas.csv"
 
 crs="EPSG:4326"
 
 def prepare_nta():
-    nta_df = pd.read_csv('../src/2020_Neighborhoods_Tabulation_Areas.csv')
+    
+    # nta_df = pd.read_csv('../src/2020_Neighborhoods_Tabulation_Areas.csv')
+    nta_df = pd.read_csv(csv_path)
     nta_df["the_geom"] = gpd.GeoSeries.from_wkt(nta_df["the_geom"])
     nta_gdf = gpd.GeoDataFrame(nta_df, geometry="the_geom", crs=crs)
     return nta_gdf 
