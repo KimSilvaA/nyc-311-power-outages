@@ -1,5 +1,5 @@
 # NYC 311 Power Outage Complaints
-
+![Screenshot of dashboard.](Screenshot.png)
 This is an end-to-end data analytics project focused on time series and geospatial analysis. The goal of this project other than personal curiosity was to practice implementing a data pipeline - from raw data extraction and transformation to interactive visualization.
 
 ## Objective
