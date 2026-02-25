@@ -11,4 +11,4 @@ dependencies:
   - shapely
   - pyogrio
   - pip:
-      - -r requirements.txt
+      - -r /app/requirements.txt
