@@ -1,0 +1,7 @@
+streamlit==1.54.0
+plotly==6.5.2
+altair==6.0.0
+folium==0.20.0
+branca==0.8.2
+python-dotenv==1.2.1
+requests==2.32.5
