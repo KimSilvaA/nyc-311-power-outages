@@ -1,9 +1,14 @@
 # NYC 311 Power Outage Complaints
-![Screenshot of dashboard.](Screenshot.png)
-This is an end-to-end data analytics project focused on time series and geospatial analysis. The goal of this project other than personal curiosity was to practice implementing a data pipeline - from raw data extraction and transformation to interactive visualization.
+![Screenshot of dashboard.](./Screenshot.png)
+This is an end-to-end data analytics project focused on time series and geospatial analysis. The goal of this project was to practice implementing a data pipeline - from raw data extraction and transformation to interactive visualization. This pipeline:
+
+- Extracts data from external APIs
+- Loads raw data into a SQL database
+- Performs transformation and aggregation
+- Displays insights through an interactive, containerized dashboard 
 
 ## Objective
-Analyze complaint trends in the boroughs over time.
+Analyze complaint trends in the NYC boroughs and boroughs over time.
 
 ## Datasets Used
 This project currently uses the following datasets:
@@ -20,11 +25,11 @@ This project currently uses the following datasets:
 - Docker (for dashboard deployment)
 
 ## Setup
-git clone this repo
-<br> Build docker image </br>
+1. Git clone the repo
+2. Build docker image <br>
 ` docker build -t nyc-311 . `
-<br> Run the container </br>
-`docker run -p 8501:8501 nyc-311`
+3. Run the container <br>
+`docker run -p 8501:8501 nyc-311` </br>
 
 ## Future Improvements
-Incorporate other kinds of data (<i>hint hint look at code</i>) to perform further analysis.
+This is the first working version of the dashboard. I would like to incorporate other kinds of data (<i>hint in code</i>) to perform other kinds of analysis.
