@@ -6,7 +6,6 @@ from pathlib import Path
 
 def db_to_df():
     # Create and connect to engine 
-    # engine = sa.create_engine(f"sqlite:///{DB_PATH}")
     engine = sa.create_engine("sqlite:////app/power_outages.db")
     connection = engine.connect()
 

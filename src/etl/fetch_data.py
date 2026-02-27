@@ -3,6 +3,16 @@ from store_sql import *
 import logging
 from datetime import datetime
 
+''' 
+This file fetches the complaints data from the NYC Open Data website 
+using an API Token. Cursor pagination is implemented using the date 
+entries and unique_key (ids). The script logs information for each 
+batch, including any errors in the process.
+
+Result: An SQL table called POWER_OUTAGES
+'''
+
+
 logging.basicConfig(filename='logs/api.log', 
                     encoding='utf-8',
                     level=logging.DEBUG,

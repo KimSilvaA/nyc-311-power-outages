@@ -3,7 +3,12 @@ import pandas as pd
 from io import StringIO
 
 ''' 
-Logging not used because this data is much easier to handle 
+File uses REST API to get the Neighborhoods Tabulation Area 
+from the NYC Open Data site.
+Logging not used because this data is much smaller and easier
+to handle 
+
+Output: CSV File containing the Tabulation data 
 '''
 
 def main():

@@ -68,6 +68,12 @@ def build_params(limit=5, **kwargs):
 
 
 def fetch_complaints(limit=5, **kwargs):
+    ''' 
+    Fetches power outage complaints from the NYC Open Data
+    Uses build_params to build parameters for the request
+    
+    Output: Response 
+    '''
     
     url = COMPLAINTS_URL
 
@@ -88,7 +94,9 @@ def fetch_complaints(limit=5, **kwargs):
 def fetch_weather(start_date, end_date):
     ''' 
     Fetches daily weather summaries of NYC in date range
-    start_date and end_date must be in ISO 8601 format (YYYY-MM-DD)
+    start_date and end_date must be str in ISO 8601 format (YYYY-MM-DD)
+
+    Output: Response
     '''
     url = WEATHER_URL
     headers = {
