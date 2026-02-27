@@ -2,10 +2,16 @@ import pandas as pd
 import geopandas as gpd
 import json
 import plotly.express as px 
-from pathlib import Path 
+from config import DATA_DIR
 
-ROOT = Path(__file__).resolve().parents[2]  # repo root, given src/analysis/...
-csv_path = ROOT / "src" / "2020_Neighborhoods_Tabulation_Areas.csv"
+
+'''
+This file contains the functions for the geospatial data, obtained
+from the NTA dataset 
+'''
+
+csv_path = DATA_DIR / "2020_Neighborhoods_Tabulation_Areas.csv"
+
 
 crs="EPSG:4326"
 

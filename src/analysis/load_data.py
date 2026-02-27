@@ -1,12 +1,18 @@
 import pandas as pd 
 import sqlalchemy as sa 
 import numpy as np
-from pathlib import Path
+from config import DATA_DIR
 
+""" 
+This file contains functions that reads the SQL
+table to a pandas dataframe and then clean it 
+"""
+
+db_path = DATA_DIR / "power_outages.db"
 
 def db_to_df():
     # Create and connect to engine 
-    engine = sa.create_engine("sqlite:////app/power_outages.db")
+    engine = sa.create_engine(f"sqlite:///{db_path}")
     connection = engine.connect()
 
     # Create Resolve Time column 
@@ -42,4 +48,3 @@ def load_dataframes():
     raw_df = db_to_df()
     return prepare_df(raw_df)
     
-df = load_dataframes()
