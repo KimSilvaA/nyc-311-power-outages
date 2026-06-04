@@ -1,7 +1,12 @@
+import sys
+import os
+sys.path.insert(0, os.path.dirname(__file__))
+
 from fetch_utils import *
 from store_sql import *
 import logging
 from datetime import datetime
+from sqlalchemy import create_engine
 
 ''' 
 This file fetches the complaints data from the NYC Open Data website 
@@ -23,7 +28,9 @@ logger = logging.getLogger(__name__)
 
 
 def main():
-    engine = create_engine("sqlite:///power_outages.db")
+    # Database path: always look in src/ directory (one level up from this file)
+    db_path = os.path.join(os.path.dirname(__file__), "..", "power_outages.db")
+    engine = create_engine(f"sqlite:///{os.path.abspath(db_path)}")
     last_date = None
     last_id = None
     batch = 1 
@@ -75,6 +82,5 @@ def main():
     logger.info(f"Total rows fetched: {total_fetched_rows}")
 
 
-# if __name__ == "__main__":
-#     main() 
-    
+if __name__ == "__main__":
+    main()
